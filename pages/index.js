@@ -6,7 +6,7 @@ export default function Home() {
   // console.log(session.user.accessToken);
 
   return (
-    <main className="app">
+    <main className="">
     </main>
   )
 }
