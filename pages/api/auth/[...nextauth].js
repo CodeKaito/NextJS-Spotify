@@ -2,8 +2,12 @@ import NextAuth from "next-auth"
 import SportifyProvider from 'next-auth/providers/spotify'
 
 const scopes = [
-    
-]
+    "user-read-email"-
+    "playlist-read-private",
+    "playlist-read-collaborative",
+    "user-read-currently-playing",
+    "user-modify-playback-state",
+].join(",")
 
 export const authOptions = {
   // Configure one or more authentication providers
