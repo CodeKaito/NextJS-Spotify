@@ -1,3 +1,4 @@
+import Sidebar from "@/components/Sidebar";
 import { useSession } from "next-auth/react"
 import { useState, useEffect } from "react"
 
@@ -24,15 +25,12 @@ export default function Home() {
   }, [session])
 
   return (
-    <main className="">
-      <div>access token: {x}</div>
-      <div>
-        {playlists.map((playlist) => 
-        <div key={playlist.id}>
-          {playlist.name}
-        </div>
-        )}
-      </div>
-    </main>
+    <>
+      <main className="flex w-full h-screen overflow-hidden bg-black">
+        <Sidebar />
+        <div>Main</div>
+      </main>
+    <div className="sticky z-20 bottom-0 h-24 w-full bg-red-200">Player</div>
+    </>
   )
 }
