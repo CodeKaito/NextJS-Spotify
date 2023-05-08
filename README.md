@@ -1,38 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spotify Clone with NextJS using Tailwind CSS, NextJS Middleware, NextAuth and Spotify API
+
+This is a Spotify clone built with NextJS using Tailwind CSS for styling, NextJS Middleware for server-side authentication, NextAuth for client-side authentication, and the Spotify API for data retrieval.
+
+[Live Demo](https://spotify-clone-nextjs.vercel.app/)
 
 ## Getting Started
 
-First, run the development server:
+Follow the below instructions to get the project up and running on your local machine for development and testing purposes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### Prerequisites
+
+- Node.js (version 10 or higher)
+- Spotify Developer Account (to obtain `CLIENT_ID` and `CLIENT_SECRET`)
+
+### Installing
+
+1. Clone the repository:
+
+```
+git clone https://github.com/<your-github-username>/spotify-clone-nextjs.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change to the project directory:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+cd spotify-clone-nextjs
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Install dependencies:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Create an `.env.local` file in the root of the project with the following contents:
 
-## Learn More
+```
+CLIENT_ID=<your-client-id>
+CLIENT_SECRET=<your-client-secret>
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Launch the development build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+This Spotify clone includes the following features:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Server-side authentication using NextJS Middleware and OAuth2
+- Client-side authentication using NextAuth to manage tokens and user information
+- Search for songs, albums, and artists
+- Display album and artist details, including track listings and related artists
+- Play preview audio of tracks
+- Responsive design using Tailwind CSS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Built With
+
+- [NextJS](https://nextjs.org/) - React framework for server-side rendering and static websites
+- [Tailwind CSS](https://tailwindcss.com/) - CSS utility framework for styling
+- [NextJS Middleware](https://github.com/hoangvvo/next-connect) - Middleware for NextJS serverless functions
+- [NextAuth](https://next-auth.js.org/) - Authentication library for NextJS
+- [Spotify API](https://developer.spotify.com/documentation/web-api/) - API for retrieving Spotify data
+
+## Acknowledgments
+
+- [Spotify Clone with React JS](https://github.com/tech-with-tim/spotify-clone) - Original project idea by Tech With Tim
+- [Blog post on NextAuth.js and Spotify](https://gagan.vercel.app/blog/next-auth-with-spotify-authentication/) - Article on using NextAuth.js with Spotify authentication
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
