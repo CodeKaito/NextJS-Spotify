@@ -31,7 +31,27 @@ export const authOptions = {
     signIn: "/Login",
   },
   callbacks: {
-    
+    async jwt({ token, account }) {
+        if (account) {
+            token.accessToken = account.access_token
+            token.refreshToken = account.refresh_token
+            token.acessTokenExpires = account.expires_at
+            return token
+        } 
+        
+        // access token has not expired
+        if (Date.now() < token.accessTokenExpires * 1000) {
+            return token
+        }
+        
+        // access token has expired
+        return refreshAccessToken(token)
+    },
+    async session({ session, token, user }) {
+        session.accessToken = token.accessToken
+        return session
+    }
   }
 }
+
 export default NextAuth(authOptions)
