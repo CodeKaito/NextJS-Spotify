@@ -9,6 +9,12 @@ const scopes = [
     "user-modify-playback-state",
 ].join(",")
 
+const params = {
+    scope: scopes,
+}
+
+const query = new URLSearchParams(params);
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
