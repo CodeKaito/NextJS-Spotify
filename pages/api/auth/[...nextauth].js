@@ -15,6 +15,8 @@ const params = {
 
 const query = new URLSearchParams(params);
 
+const LOGIN_URL = "https://accounts.spotify.com/authorize?" + new URLSearchParams(params).toString();
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -23,7 +25,13 @@ export const authOptions = {
       clientSecret: process.env.SPOTIFY_SECRET,
       authorization: LOGIN_URL,
     }),
-    // ...add more providers here
   ],
+  secret: process.env.JWT_SECRET,
+  pages: {
+    signIn: "/Login",
+  },
+  callbacks: {
+    
+  }
 }
 export default NextAuth(authOptions)
