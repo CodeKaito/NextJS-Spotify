@@ -4,7 +4,7 @@ import SportifyProvider from 'next-auth/providers/spotify'
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
-    GithubProvider({
+    Spotifyprovider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
