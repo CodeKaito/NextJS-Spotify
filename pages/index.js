@@ -10,13 +10,19 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex w-full h-screen overflow-hidden bg-black">
-        <Sidebar
-          view={view}
-          setView={setView} 
-          setGlobalPlaylistId={setGlobalPlaylistId}
+      <main className="h-screen overflow-hidden bg-black">
+        <div className="flex w-full">
+          <Sidebar
+            view={view}
+            setView={setView}
+            setGlobalPlaylistId={setGlobalPlaylistId}
           />
-        {view === "playlist" && <PlaylistView />}
+          {view === "playlist" && <PlaylistView
+            setView={setView}
+            setGlobalArtistId={setGlobalArtistId}
+            globalPlaylistId={globalPlaylistId}
+          />}
+          </div>
       </main>
     <div className="sticky z-20 bottom-0 h-24 w-full bg-red-200">Player</div>
     </>
