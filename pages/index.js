@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function Home() {
 
-  const [view, setView] = useState("Search"); // Search Library
+  const [view, setView] = useState("search"); // Search Library
   const [globalPlaylistId, setGlobalPlaylistId] = useState(null);
   const [globalArtistId, setGlobalArtistId] = useState(null);
 
