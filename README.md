@@ -6,7 +6,7 @@ This is a Spotify clone built with NextJS using Tailwind CSS for styling, NextJS
 
 ## Getting Started
 
-Follow the below instructions to get the project up and running on your local machine for development and testing purposes.
+Follow the below instructions to get the project up and running on your local machine for development and testing purposes..
 
 ### Prerequisites
 
