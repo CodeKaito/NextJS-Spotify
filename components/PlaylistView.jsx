@@ -3,15 +3,20 @@ import { useSession } from 'next-auth/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 const colors = [
-  "from-indigo-500",
-  "from-red-500",
-  "from-blue-500"
+  'from-indigo-500',
+  'from-blue-500',
+  'from-green-500',
+  'from-red-500',
+  'from-yellow-500',
+  'from-pink-500',
+  'from-purple-500'
 ]
 
 function PlaylistView({ globalPlaylistId }) {
 
   const { data: session } = useSession()
   const [playlistData, setPlaylistData ] = useState(null);
+  const [color, setColor] = useState(colors[0]);
 
   useEffect(() => {
     async function f() {
@@ -27,8 +32,11 @@ function PlaylistView({ globalPlaylistId }) {
     }
     f();
   }, [session, globalPlaylistId])
-  
 
+  useEffect(() => {
+    setColor(shuffle(colors).pop())
+  }, [globalPlaylistId])
+  
   return (
     <div className='flex-grow h-screen'>
         <header className='text-white sticky top-0 h-20 z-10 text-4xl bg-neutral-800 p-8 flex items-center font-bold'>
@@ -40,7 +48,9 @@ function PlaylistView({ globalPlaylistId }) {
           <ChevronDownIcon className='h-5 w-5'/>
         </div>
         <div className='relative -top-20 h-screen overflow-y-scroll bg-neutral-900'>
-          <section className=''></section>
+          <section className={`flex items-end space-x-7 bg-gradient-to-b to-neutral-900 ${color} h-80 text-white p-8`}>
+            <img className='h-44 w-44' src={playlistData.images[0].url} alt="" />
+          </section>
         </div>
     </div>
   )
