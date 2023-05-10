@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { shuffle } from 'lodash';
 import { useSession } from 'next-auth/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
@@ -49,7 +50,11 @@ function PlaylistView({ globalPlaylistId }) {
         </div>
         <div className='relative -top-20 h-screen overflow-y-scroll bg-neutral-900'>
           <section className={`flex items-end space-x-7 bg-gradient-to-b to-neutral-900 ${color} h-80 text-white p-8`}>
-            <img className='h-44 w-44' src={playlistData.images[0].url} alt="" />
+            {playlistData && <img className='h-44 w-44' src={playlistData.images[0].url} alt="" />}
+            <div>
+              <p>Playlist</p>
+              <h1 className='text-2xl md:text-3xl lg:text-5xl font-extrabold '>{playlistData?.name}</h1>
+            </div>
           </section>
         </div>
     </div>

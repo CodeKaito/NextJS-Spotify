@@ -25,7 +25,7 @@ const Sidebar = ({ view, setView, setGlobalPlaylistId }) => {
         f()
     }, [session])
     return (
-        <div className='w-64 text-neutral-400 grow-0 shrink-0 h-screen overflow-y-scroll border-r border-neutral-900 p-5 text-sm hidden md:inline-flex'>
+        <div className='w-64 text-neutral-400 grow-0 shrink-0 h-screen overflow-y-scroll border-r border-neutral-900 p-5 text-sm hidden md:inline-flex flex-col p-5 space-y-4 text-sm hidden md:inline-flex'>
             <div className='space-y-4'>
                 <div className='mt-1 mb-5'>
                     <SpotifySVG />
