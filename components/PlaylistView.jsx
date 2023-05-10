@@ -52,7 +52,7 @@ function PlaylistView({ globalPlaylistId }) {
           <section className={`flex items-end space-x-7 bg-gradient-to-b to-neutral-900 ${color} h-80 text-white p-8`}>
             {playlistData && <img className='h-44 w-44' src={playlistData.images[0].url} alt="" />}
             <div>
-              <p>Playlist</p>
+              <p className='text-sm font-bold'>Playlist</p>
               <h1 className='text-2xl md:text-3xl lg:text-5xl font-extrabold '>{playlistData?.name}</h1>
             </div>
           </section>
