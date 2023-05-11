@@ -4,7 +4,8 @@ import Player from "@/components/Player"
 import PlaylistView from "@/components/PlaylistView"
 import Search from "@/components/Search"
 import Sidebar from "@/components/Sidebar"
-import { useState } from "react"
+import { useSession } from "next-auth/react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
   const [view, setView] = useState("search") // ["search", "library", "playlist", "artist"]
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="h-screen overflow-hidden bg-black">
+      <main className="scrollbar-hide h-screen overflow-hidden bg-black">
         <div className="flex w-full">
           <Sidebar
             view={view}
