@@ -21,6 +21,24 @@ function PlaylistView({ globalPlaylistId }) {
   const [opacity, setOpacity] = useState(0);
   const [textOpacity, setTextOpacity] = useState(0);
 
+  function changeOpacity(scrollPos) {
+    // scrollPos = 0 -> opacity = 0
+    // scrollPos = 300 -> opacity = 1, textOpacity = 0
+    // scrollPos = 310 -> opacity = 1, textOpacity = 1
+    const offset = 300;
+    const textOffset = 10;
+    if (scrollPos < offset) {
+      const newOpacity = 1 - ((offset - scrollPos)/offset);
+      setOpacity(newOpacity)
+      setTextOpacity(0)
+    } else {
+      setOpacity(1)
+      const delta = scrollPos - offset
+      const newTextOpacity = 1 - ((textOffset - delta)/textOffset)
+      setTextOpacity(newTextOpacity)
+    } 
+  }
+
   useEffect(() => {
     async function f() {
       if (session && session.accessToken) {
