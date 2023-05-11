@@ -18,6 +18,8 @@ function PlaylistView({ globalPlaylistId }) {
   const { data: session } = useSession()
   const [playlistData, setPlaylistData ] = useState(null);
   const [color, setColor] = useState(colors[0]);
+  const [opacity, setOpacity] = useState(0);
+  const [textOpacity, setTextOpacity] = useState(0);
 
   useEffect(() => {
     async function f() {
@@ -56,6 +58,9 @@ function PlaylistView({ globalPlaylistId }) {
               <h1 className='text-2xl md:text-3xl lg:text-5xl font-extrabold '>{playlistData?.name}</h1>
             </div>
           </section>
+          <div className=''>
+            
+          </div>
         </div>
     </div>
   )
