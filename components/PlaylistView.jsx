@@ -58,8 +58,11 @@ function PlaylistView({ globalPlaylistId }) {
               <h1 className='text-2xl md:text-3xl lg:text-5xl font-extrabold '>{playlistData?.name}</h1>
             </div>
           </section>
-          <div className=''>
-            
+          <div className='text-white px-8 flex flex-col space-y-1 pb-28'>
+            {playlistData?.tracks.items.map((track, i) => {
+              // song component
+              return <div key={track.track.id}></div>
+            })}
           </div>
         </div>
     </div>
