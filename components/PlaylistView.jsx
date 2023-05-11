@@ -62,14 +62,17 @@ function PlaylistView({ globalPlaylistId }) {
   return (
     <div className='flex-grow h-screen'>
         <header style={{opacity: opacity}} className='text-white sticky top-0 h-20 z-10 text-4xl bg-neutral-800 p-8 flex items-center font-bold'>
-          <div style={{opacity: textOpacity}}>{playlistData?.name}</div>
+          <div style={{opacity: textOpacity}} className='flex items-center' >
+            {playlistData && <img className='h-8 w-8 mr-6' src={playlistData.images[0].url} alt="" />}
+            <p>{playlistData?.name}</p>
+          </div>
         </header>
         <div className='absolute z-20 top-5 right-8 flex items-center bg-black bg-opacity-70 text-white space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2'>
           <img className='rounded-full w-7 h-7' src={session?.user.image} alt='profile pic'/>
           <p className='text-sm'>Logout</p>
           <ChevronDownIcon className='h-5 w-5'/>
         </div>
-        <div onScroll={(e) => changeOpacity(e.target.scrollTop)} className='relative -top-20 h-screen overflow-y-scroll bg-neutral-900'>
+        <div onScroll={(e) => changeOpacity(e.target.scrollTop)} className='relative -top-20 h-screen bg-neutral-900 overflow-y-scroll scrollbar-hide'>
           <section className={`flex items-end space-x-7 bg-gradient-to-b to-neutral-900 ${color} h-80 text-white p-8`}>
             {playlistData && <img className='h-44 w-44' src={playlistData.images[0].url} alt="" />}
             <div>

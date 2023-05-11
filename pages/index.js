@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="h-screen overflow-y-hidden bg-black">
+      <main className="h-screen overflow-hidden bg-black">
         <div className="flex w-full">
           <Sidebar
             view={view}
