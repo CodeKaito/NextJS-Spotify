@@ -1,7 +1,7 @@
 import { PlayIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react'
 
-const Song = ({sno, track}) => {
+const Song = ({sno, track, setGlobalCurrentSongId}) => {
 
     const [hover, setHover] = useState(false);
 
@@ -16,7 +16,7 @@ const Song = ({sno, track}) => {
     }
 
   return (
-    <div onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className='grid grid-cols-2 text-neutral-400 text-sm py-4 px-5 hover:bg-white hover:bg-opacity-10 rounded-lg cursor-default'>
+    <div onClick={()=> setGlobalCurrentSongId(track.id)} onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className='grid grid-cols-2 text-neutral-400 text-sm py-4 px-5 hover:bg-white hover:bg-opacity-10 rounded-lg cursor-default'>
       <div className='flex items-center space-x-4'>
         {hover? <PlayIcon className='h-5 w-5 text-white' /> :<p className='w-5'>{sno + 1}</p>}
         <img className='h-10 w-10' src={track.album.images[0].url} alt="track-album" />
