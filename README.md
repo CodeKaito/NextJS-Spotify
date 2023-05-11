@@ -2,6 +2,9 @@
 
 This is a Spotify clone built with NextJS using Tailwind CSS for styling, NextJS Middleware for server-side authentication, NextAuth for client-side authentication, and the Spotify API for data retrieval.
 
+![image](https://github.com/CodeKaito/NextJS-Spotify/assets/57111980/5565d858-6932-478e-ba08-9aefbe9ded29)
+
+
 [Live Demo](https://spotify-clone-nextjs.vercel.app/)
 
 ## Getting Started
