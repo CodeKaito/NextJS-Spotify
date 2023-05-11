@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { shuffle } from 'lodash';
 import { useSession } from 'next-auth/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import Song from './Song';
 
 const colors = [
   'from-indigo-500',
@@ -79,7 +80,11 @@ function PlaylistView({ globalPlaylistId }) {
           <div className='text-white px-8 flex flex-col space-y-1 pb-28'>
             {playlistData?.tracks.items.map((track, i) => {
               // song component
-              return <div key={track.track.id}>{track.track.name}</div>
+              return <Song
+                key={track.track.id}
+                sno={i}
+                track={track.track}
+              />
             })}
           </div>
         </div>
