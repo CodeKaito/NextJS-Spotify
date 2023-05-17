@@ -2,7 +2,8 @@ import NextAuth from "next-auth"
 import SpotifyProvider from "next-auth/providers/spotify"
 import fetch from "node-fetch";
 
-require("dontenv").config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 const scopes = [
     "user-read-email",
